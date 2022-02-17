@@ -25,6 +25,13 @@ class Address
 
     public function getPage(){
 
+        switch ($this->id){
+            default:
+                return "common/login/1";
+                break;
+
+        }
+
         try{
             $this->preparePageFromAddress();
         }catch (\Exception $exception){
@@ -48,7 +55,7 @@ class Address
     private function getType(){
 
         //4 типа, делать с учётом добавления типа
-        return "marble";
+        return "common";
 
     }
 
