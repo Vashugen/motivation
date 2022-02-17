@@ -11,7 +11,7 @@ $this->registerJsFile('/js/common.js');
     }
 
     .div-input {
-        margin-top: 1em;
+        margin-top: 1%;
         font-size: 2em;
     }
 
@@ -50,26 +50,46 @@ $this->registerJsFile('/js/common.js');
     }
 
     .titile {
-        font-size: 200%;
+        font-size: 300%;
     }
 
     .desc {
 
     }
 
+    .inner-container {
+        margin-top: 2%;
+    }
+
 </style>
 
-<div class="container prize-text">
-    <div class="text titile">Добро пожаловать!</div>
-    <div class="text desc">Настало время выбрать свою награду за прохождение ключевых шагов!</div>
+<div class="container text titile">
+    <div>Добро пожаловать!</div>
 </div>
-<div class="container prize-item">
-    Пункты
+<div class="container inner-container text desc">
+    <div>
+        Настало время выбрать свою награду за прохождение ключевых шагов!<br>
+        Впишите в поля свои собственные варианты наград или перетащите предложенные ниже картинки!<br>
+        В ключевой момент мы напомним тебе о выбранной тобой награде!)<br>
+    </div>
 </div>
-<div class="container prize-pic">
-    картинки
+<div class="container inner-container prize-item">
+    <div class="div-input" align="center">
+        <input type="text" class="login-input" name="userName" placeholder="ВАШЕ ИМЯ" autocomplete="off">
+    </div>
+    <div class="div-input" align="center">
+        <input type="text" class="login-input" name="userLogin" placeholder="ЛОГИН" autocomplete="off">
+    </div>
+    <div class="div-input" align="center">
+        <input type="text" class="login-input" name="userPassword" placeholder="ПАРОЛЬ" autocomplete="off">
+    </div>
 </div>
-<div class="containerprize-btn">
-    кнопки
+<!--<div class="container inner-container prize-pic">
+    тут будет блок с картинками
+</div>-->
+<div class="container prize-btn inner-container">
+    <div class="" align="right">
+        <button type="submit" class="login-button">Сохранить</button>
+    </div>
 </div>
 
