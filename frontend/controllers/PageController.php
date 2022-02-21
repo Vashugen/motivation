@@ -35,4 +35,8 @@ class PageController extends Controller
         return $this->render("common/login/prize");
     }
 
+    public function actionChangePicsPrize(){
+
+    }
+
 }
