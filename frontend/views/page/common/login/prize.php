@@ -82,13 +82,13 @@ $this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::clas
     <div class="container inner-container prize-item" style="padding: 10px">
         <div class="row">
             <div class="col-lg-4">
-                <input type="text" class="prize-input" name="prizeOne" placeholder="НАГРАДА" autocomplete="off">
+                <input type="text" class="prize-input" name="prizeTextOne" id="prizeTextOne" placeholder="НАГРАДА" autocomplete="off">
             </div>
             <div class="col-lg-4 col-lg-offset-1">
-                <input type="text" class="prize-input" name="prizeTwo" placeholder="НАГРАДА" autocomplete="off">
+                <input type="text" class="prize-input" name="prizeTextTwo" id="prizeTextTwo" placeholder="НАГРАДА" autocomplete="off">
             </div>
             <div class="col-lg-4">
-                <input type="text" class="prize-input" name="prizeThree" placeholder="НАГРАДА" autocomplete="off">
+                <input type="text" class="prize-input" name="prizeTextThree" id="prizeTextThree" placeholder="НАГРАДА" autocomplete="off">
             </div>
         </div>
     </div>

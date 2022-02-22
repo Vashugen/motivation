@@ -5,6 +5,7 @@ namespace frontend\controllers;
 
 use backend\models\Address;
 use yii\web\Controller;
+use yii\web\Response;
 
 class PageController extends Controller
 {
@@ -13,7 +14,8 @@ class PageController extends Controller
         return $this->render("common/login/1");
     }
 
-    public function actionM(){
+    public function actionM()
+    {
         $id = \Yii::$app->request->get('id');
         $address = new Address($id);
         $page = $address->getPage();
@@ -37,6 +39,11 @@ class PageController extends Controller
 
     public function actionChangePicsPrize(){
 
+    }
+
+    public function actionSavePrize(){
+        \Yii::$app->response->format = Response::FORMAT_JSON;
+        return ["success" => true, "message" => "Всё успешно сохранено! В добрый путь!"];
     }
 
 }

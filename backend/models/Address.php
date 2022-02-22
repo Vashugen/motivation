@@ -2,16 +2,28 @@
 
 namespace backend\models;
 
+use yii\base\Theme;
+
 class Address
 {
 
     public $id;
 
-    const COUNT = 6;
+    private $addresses = [
+        '1' => [12345, 703869, 977571, 140485, 501707, 609128, 715012, 908794, 362319],
+        '2' => [],
+        '3' => [],
+        '4' => [],
+        '5' => []
+    ];
 
-    const VOLUMES_COUNT = 8;
-
-    private $address = null;
+    private $levels = [
+        '1' => 'login/index',
+        '2' => 'prize/1',
+        '3' => 'prize/2',
+        '4' => 'prize/3',
+        '5' => 'prize/finish'
+    ];
 
     /**
      * Address constructor.
@@ -25,57 +37,17 @@ class Address
 
     public function getPage(){
 
-        switch ($this->id){
-            default:
-                return "common/login/1";
-                break;
-
+        $level = null;
+        foreach ($this->addresses as $l => $items){
+            if(in_array($this->id, $items)){
+                $level = $l;
+            }
         }
 
-        try{
-            $this->preparePageFromAddress();
-        }catch (\Exception $exception){
-            throw $exception;
-        }
+        if(!$level) $level = 1;
 
-        return $this->address;
-
+        return $this->levels[$level];
     }
 
-    private function preparePageFromAddress(){
-
-        $type = $this->getType();
-        $step = $this->getStep();
-        $vol = $this->getVolume();
-
-        $this->address = $type . "/" . $step . "/" . $vol;
-
-    }
-
-    private function getType(){
-
-        //4 типа, делать с учётом добавления типа
-        return "common";
-
-    }
-
-    private function getStep(){
-
-        return "login";
-
-        //шагов может быть разное кол-во
-        switch ($this->id[self::COUNT-1]){
-            case 1:
-            case 6:
-                return "greetings";
-        }
-
-    }
-
-    private function getVolume(){
-
-        return "1";
-        return rand(1, self::VOLUMES_COUNT);
-    }
 
 }
