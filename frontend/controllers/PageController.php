@@ -27,6 +27,10 @@ class PageController extends Controller
         return $this->render("common/login/login");
     }
 
+    public function actionLoginUser(){
+
+    }
+
     public function actionRegister()
     {
         return $this->render("common/login/register");

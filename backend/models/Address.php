@@ -9,6 +9,8 @@ class Address
 
     public $id;
 
+    const TYPE = "common/";
+
     private $addresses = [
         '1' => [12345, 703869, 977571, 140485, 501707, 609128, 715012, 908794, 362319],
         '2' => [],
@@ -46,7 +48,7 @@ class Address
 
         if(!$level) $level = 1;
 
-        return $this->levels[$level];
+        return self::TYPE.$this->levels[$level];
     }
 
 
