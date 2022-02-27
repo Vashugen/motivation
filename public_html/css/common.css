@@ -1,0 +1,32 @@
+.main-button {
+    display: inline-block; /* строчно-блочный */
+    padding: 20px 60px; /* расстояние от текста до края кнопки */
+    background-color: #00e4a2; /* цвет кнопки  */
+    border-radius: 20px; /* скругление углов */
+    font-size: 2.8em; /* размер шрифта */
+    text-transform: uppercase; /* трансформировать в заглавные буквы */
+    text-decoration: none; /* не подчеркивать ссылку */
+    transition: 0.2s; /* плавный ховер эффект */
+    color: #f7f8e8; /* цвет текста на кнопке */
+}
+
+input::-moz-placeholder {
+    color: rgba(147, 158, 212, 0.67);
+}
+
+input::-webkit-input-placeholder {
+    color: rgba(147, 158, 212, 0.67);
+}
+
+.text{
+    text-align: center;
+    font-family: "Comic Sans MS";
+}
+
+.title {
+    font-size: 300%;
+}
+
+.desc {
+    font-weight: normal;
+}
