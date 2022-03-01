@@ -31,7 +31,7 @@ $this->registerJsFile('/js/common.js');
 
 </style>
 
-<form action="../page/save-login-data">
+<form action="../page/register-user">
     <div class="div-input" align="center">
         <input type="text" class="login-input" name="userName" placeholder="ВАШЕ ИМЯ" autocomplete="off">
     </div>

@@ -28,17 +28,22 @@ class PageController extends Controller
     }
 
     public function actionLoginUser(){
+        //check users data
+        $checked = true;
+        if($checked){
+            //TODO разные приветсвия (+ ИМЯ) в зависимости от того, первый раз или нет (подарки за возвращение)
+            return $this->render("common/login/prize");
+        }
+    }
 
+    public function actionRegisterUser(){
+        //TODO save user data + redirect
+        return $this->render("common/login/prize");
     }
 
     public function actionRegister()
     {
         return $this->render("common/login/register");
-    }
-
-    public function actionSaveLoginData(){
-        //TODO save user data + redirect
-        return $this->render("common/login/prize");
     }
 
     public function actionChangePicsPrize(){

@@ -1,5 +1,5 @@
 <?php
-$this->registerJsFile('/js/common.js');
+$this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::className(),\yii\bootstrap4\BootstrapAsset::className()]]);
 ?>
 
 <div class="btn-all" align="center">
