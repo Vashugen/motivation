@@ -1,5 +1,5 @@
 <?php
-$this->registerJsFile('/js/common.js');
+$this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::className(),\yii\bootstrap4\BootstrapAsset::className()]]);
 ?>
 
 <style>
@@ -17,18 +17,6 @@ $this->registerJsFile('/js/common.js');
         margin-top: 1em;
     }
 
-    .login-button {
-        display: inline-block; /* строчно-блочный */
-        padding: 20px 60px; /* расстояние от текста до края кнопки */
-        background-color: #00e4a2; /* цвет кнопки  */
-        border-radius: 20px; /* скругление углов */
-        font-size: 2.8em; /* размер шрифта */
-        text-transform: uppercase; /* трансформировать в заглавные буквы */
-        text-decoration: none; /* не подчеркивать ссылку */
-        transition: 0.2s; /* плавный ховер эффект */
-        color: #f7f8e8; /* цвет текста на кнопке */
-    }
-
 </style>
 
 <form action="../page/register-user">
@@ -42,6 +30,6 @@ $this->registerJsFile('/js/common.js');
         <input type="text" class="login-input" name="userPassword" placeholder="ПАРОЛЬ" autocomplete="off">
     </div>
     <div class="div-login" align="center">
-        <button type="submit" class="login-button">Сохранить</button>
+        <button type="submit" class="main-button">Сохранить</button>
     </div>
 </form>

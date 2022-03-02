@@ -19,7 +19,7 @@ $this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::clas
 
 </style>
 
-<form action="../page/login-user">
+<form id="userForm">
     <div class="div-input" align="center">
         <input type="text" class="login-input" name="userLogin" placeholder="ЛОГИН" autocomplete="off">
     </div>

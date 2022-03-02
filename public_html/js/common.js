@@ -1,3 +1,9 @@
+$("#userForm").on("submit", function () {
+
+
+
+});
+
 $(".prize-picture").on("click", function (){
 
    var element = $(this);
