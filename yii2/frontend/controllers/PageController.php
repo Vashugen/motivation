@@ -4,7 +4,8 @@
 namespace frontend\controllers;
 
 use backend\models\Address;
-use frontend\models\User;
+use backend\models\User;
+use yii\db\Exception;
 use yii\web\Controller;
 use yii\web\Response;
 
@@ -39,14 +40,22 @@ class PageController extends Controller
 
     public function actionRegisterUser(){
 
-        $params = new User(Yii::$app->request->post());
+        $user = new User(Yii::$app->request->post());
 
-        //TODO save user data + redirect
+        try{
+            $user->createUser($params);
+        }catch (Exception $exception){
+            //отправлять на почту или в логи писать
+        }
+
         return $this->render("common/login/prize");
     }
 
     public function actionRegister()
     {
+
+
+
         return $this->render("common/login/register");
     }
 
