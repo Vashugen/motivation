@@ -25,19 +25,6 @@ class PageController extends Controller
         return $this->render($page);
     }
 
-    public function actionLogin(){
-        return $this->render("common/login/login");
-    }
-
-    public function actionLoginUser(){
-        //check users data
-        $checked = true;
-        if($checked){
-            //TODO разные приветсвия (+ ИМЯ) в зависимости от того, первый раз или нет (подарки за возвращение)
-            return $this->render("common/login/prize");
-        }
-    }
-
     public function actionRegisterUser(){
 
         $user = new User(Yii::$app->request->post());

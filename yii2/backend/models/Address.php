@@ -9,6 +9,7 @@ class Address
 
     public $id;
 
+    //тип интерфейса в зависимости от типа приобретённой доски
     const TYPE = "common/";
 
     private $addresses = [

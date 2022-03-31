@@ -1,6 +1,16 @@
 $("#userForm").on("submit", function () {
 
+   var params = $(this).serialize();
 
+   $.ajax({
+      type: "POST",
+      url: "login-user",
+      data: params,
+      dataType: "json",
+      success: function (response) {
+         alert(response.message);
+      }
+   });
 
 });
 
