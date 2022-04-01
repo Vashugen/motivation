@@ -19,7 +19,7 @@ $this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::clas
 
 </style>
 
-<form id="userForm">
+<form id="userLoginForm">
     <div class="div-input" align="center">
         <input type="text" class="login-input" name="userLogin" placeholder="ЛОГИН" autocomplete="off">
     </div>
@@ -30,3 +30,5 @@ $this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::clas
         <button type="submit" class="main-button">Войти</button>
     </div>
 </form>
+
+<?= $this->render('/common/_info')?>

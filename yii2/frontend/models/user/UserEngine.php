@@ -1,7 +1,8 @@
 <?php
 
-use app\models\UserBoards;
+namespace frontend\models\user;
 
+use app\models\UserBoards;
 use yii\base\Model;
 
 class UserEngine extends Model
@@ -22,6 +23,21 @@ class UserEngine extends Model
         $this->password = $params['userPassword'];
     }
 
+    public function rules()
+    {
+        return [
+            [['login', 'password'], 'required']
+        ];
+    }
+
+    public function getUser()
+    {
+         return UserBoards::find()
+            ->where(["login" => $this->login])
+            ->andWhere(["password" => md5($this->password)])
+            ->one();
+    }
+
     public function create(){
 
         try{
@@ -38,9 +54,8 @@ class UserEngine extends Model
 
     }
 
-    private function checkData(){
-
-        //на пустоту
+    private function checkData()
+    {
         //на валидность (буквы блаблабла)
 
         $exists_login = UserBoards::findAll(['login' => $this->login]);

@@ -38,14 +38,6 @@ class PageController extends Controller
         return $this->render("common/login/prize");
     }
 
-    public function actionRegister()
-    {
-
-
-
-        return $this->render("common/login/register");
-    }
-
     public function actionChangePicsPrize(){
 
     }
