@@ -1,74 +1,11 @@
 <?php
+$this->registerCssFile('/css/prize.css');
 $this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::className(),\yii\bootstrap4\BootstrapAsset::className()]/*, 'position' => yii\web\View::POS_LOAD*/]);
 ?>
 
-<style>
-
-    .prize-input {
-        margin-top: 1%;
-        font-size: 1.7em;
-        border-radius: 8px;
-    }
-
-    .prize-col {
-        float: left;
-        /*margin: 0 0 0 3.5%;*/
-    }
-
-    .prize-col:first-child {
-        margin-left: 0;
-    }
-
-    input::placeholder {
-        color: #333;
-    }
-    input:focus::placeholder {
-        color: transparent;
-    }
-    textarea::placeholder {
-        color: #333;
-    }
-    textarea:focus::placeholder {
-        color: transparent;
-    }
-
-    .text{
-        text-align: center;
-        font-family: "Comic Sans MS";
-    }
-
-    .titile {
-        font-size: 300%;
-    }
-
-    .desc {
-        font-weight: normal;
-    }
-
-    .inner-container {
-        margin-top: 2%;
-    }
-
-    .prize-btn {
-        display: inline-block; /* строчно-блочный */
-        padding: 10px 30px; /* расстояние от текста до края кнопки */
-        background-color: #00e4a2; /* цвет кнопки  */
-        border-radius: 20px; /* скругление углов */
-        font-size: 40px; /* размер шрифта */
-        text-transform: uppercase; /* трансформировать в заглавные буквы */
-        text-decoration: none; /* не подчеркивать ссылку */
-        transition: 0.2s; /* плавный ховер эффект */
-        color: #f7f8e8; /* цвет текста на кнопке */
-    }
-
-</style>
-
-<div class="container text titile">
-    <div>Добро пожаловать!</div>
-</div>
-<div class="container inner-container text desc">
+<div class="container text desc">
     <div>
-        Настало время выбрать свою награду за прохождение ключевых шагов!<br>
+        Настало время выбрать свои награды за прохождение ключевых шагов!<br>
         Впишите в поля свои собственные варианты наград или отметьте что-то из предложенных ниже картинок!<br>
         В ключевой момент мы напомним тебе о выбранной тобой награде!)<br>
     </div>
@@ -79,7 +16,7 @@ $this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::clas
         <input type="text" hidden id="prizePicsTwo" value="">
         <input type="text" hidden id="prizePicsThree" value="">
     </div>
-    <div class="container inner-container prize-item" style="padding: 10px">
+    <div class="container inner-container" style="padding: 10px">
         <div class="row">
             <div class="col-lg-4">
                 <input type="text" class="prize-input" name="prizeTextOne" id="prizeTextOne" placeholder="НАГРАДА" autocomplete="off">
@@ -136,7 +73,7 @@ $this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::clas
     </div>
     <div class="container inner-container">
         <div class="" align="right">
-            <button type="submit" class="prize-btn">Сохранить</button>
+            <button type="submit" class="main-button btn-prize">Сохранить</button>
         </div>
     </div>
 </form>

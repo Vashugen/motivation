@@ -25,19 +25,6 @@ class PageController extends Controller
         return $this->render($page);
     }
 
-    public function actionRegisterUser(){
-
-        $user = new User(Yii::$app->request->post());
-
-        try{
-            $user->createUser($params);
-        }catch (Exception $exception){
-            //отправлять на почту или в логи писать
-        }
-
-        return $this->render("common/login/prize");
-    }
-
     public function actionChangePicsPrize(){
 
     }

@@ -30,7 +30,7 @@ $this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::clas
         <input type="text" class="login-input" name="userPassword" placeholder="ПАРОЛЬ" autocomplete="off">
     </div>
     <div class="div-login" align="center">
-        <button type="submit" class="main-button">Сохранить</button>
+        <button type="submit" class="main-button btn-common">Сохранить</button>
     </div>
 </form>
 

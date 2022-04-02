@@ -4,9 +4,12 @@ namespace frontend\models\user;
 
 use app\models\UserBoards;
 use yii\base\Model;
+use yii\db\Exception;
 
 class UserEngine extends Model
 {
+
+    public $name;
 
     public $login;
 
@@ -19,6 +22,7 @@ class UserEngine extends Model
      */
     public function __construct($params = [])
     {
+        $this->name = isset($params['userName']) ? $params['userName'] : null;
         $this->login = $params['userLogin'];
         $this->password = $params['userPassword'];
     }
@@ -57,7 +61,9 @@ class UserEngine extends Model
     private function checkData()
     {
         //на валидность (буквы блаблабла)
-
+        if(empty($this->name)){
+            throw new Exception("Пожалуйста, заполните имя!");
+        }
         $exists_login = UserBoards::findAll(['login' => $this->login]);
         if(!empty($exists_login)){
             throw new \yii\db\Exception("Логин уже существует, пожалуйста, попробуйте другой!");
@@ -68,6 +74,7 @@ class UserEngine extends Model
 
         $model = new UserBoards();
         $model->login = $this->login;
+        $model->name = $this->name;
         $model->password = md5($this->password);
 
         try{

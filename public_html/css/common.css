@@ -1,14 +1,22 @@
 .main-button {
     display: inline-block; /* строчно-блочный */
-    padding: 20px 60px; /* расстояние от текста до края кнопки */
     background-color: #00e4a2; /* цвет кнопки  */
     border-radius: 20px; /* скругление углов */
     /*TODO change to em (near 2.8)*/
-    font-size: 50px; /* размер шрифта */
     text-transform: uppercase; /* трансформировать в заглавные буквы */
     text-decoration: none; /* не подчеркивать ссылку */
     transition: 0.2s; /* плавный ховер эффект */
     color: #f7f8e8; /* цвет текста на кнопке */
+}
+
+.btn-common {
+    padding: 20px 60px; /* расстояние от текста до края кнопки */
+    font-size: 50px; /* размер шрифта */
+}
+
+.btn-prize {
+    padding: 10px 30px; /* расстояние от текста до края кнопки */
+    font-size: 40px; /* размер шрифта */
 }
 
 input::-moz-placeholder {
@@ -32,6 +40,21 @@ input::-webkit-input-placeholder {
     font-weight: normal;
 }
 
-.title-text {
-    text-align: center;
+.inner-container {
+    margin-top: 2%;
+}
+
+input::placeholder {
+    color: #333;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+textarea::placeholder {
+    color: #333;
+}
+textarea:focus::placeholder {
+    color: transparent;
 }

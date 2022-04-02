@@ -56,6 +56,10 @@ class RegisterController extends Controller
             return ["success" => false, "message" => $exception->getMessage()];
         }
 
-        return ["success" => true, "data" => $this->render("acquaintance")];
+        return ["success" => true, "data" => $this->render("acquaintance", ['name' => $this->user->name])];
+    }
+
+    public function actionAcquaintance(){
+        return $this->render('acquaintance');
     }
 }
