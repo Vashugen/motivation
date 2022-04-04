@@ -43,13 +43,13 @@ $this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::clas
         </div>
         <div class="row">
             <div class="col-md-4 prize-col">
-                <img src="<?=Yii::$app->request->baseUrl;?>/images/car.png" alt="любимый десерт" id="prizePicCake" name="prizePicCake" width="100%">
+                <img src="<?=Yii::$app->request->baseUrl;?>/images/cake.png" class="prize-picture" alt="любимый десерт" id="prizePicCake" name="prizePicCake" width="100%" data-checked="0" data-prizeName="cake">
             </div>
             <div class="col-md-4 prize-col">
-                <img src="<?=Yii::$app->request->baseUrl;?>/images/palm.png" alt="" id="prizePicVine" name="prizePicVine" width="100%">
+                <img src="<?=Yii::$app->request->baseUrl;?>/images/vine.png" alt="" class="prize-picture" id="prizePicVine" name="prizePicVine" width="100%" data-checked="0" data-prizeName="vine">
             </div>
             <div class="col-md-4 prize-col">
-                <img src="<?=Yii::$app->request->baseUrl;?>/images/rolls.png" alt="" width="100%" id="prizePicRing" name="prizePicRing">
+                <img src="<?=Yii::$app->request->baseUrl;?>/images/ring.png" alt="" class="prize-picture" id="prizePicRing" name="prizePicRing" width="100%" data-checked="0" data-prizeName="ring">
             </div>
         </div>
     </div>
