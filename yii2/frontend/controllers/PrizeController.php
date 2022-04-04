@@ -13,4 +13,8 @@ class PrizeController extends Controller
         return $this->render('index');
     }
 
+    public function actionSavePrize(){
+
+    }
+
 }
