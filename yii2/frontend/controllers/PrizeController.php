@@ -13,8 +13,9 @@ class PrizeController extends Controller
         return $this->render('index');
     }
 
-    public function actionSavePrize(){
+    public function actionSavePrizes(){
 
     }
 
+    //TODO реализовать кнопку "Сделать выбор за меня"
 }

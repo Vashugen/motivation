@@ -1,6 +1,7 @@
 <?php
 $this->registerCssFile('/css/prize.css');
 $this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::className(),\yii\bootstrap4\BootstrapAsset::className()]/*, 'position' => yii\web\View::POS_LOAD*/]);
+$this->registerJsFile('/js/prize.js', ['depends' => [\yii\web\JqueryAsset::className(),\yii\bootstrap4\BootstrapAsset::className()]/*, 'position' => yii\web\View::POS_LOAD*/]);
 ?>
 
 <div class="container text desc">
@@ -32,7 +33,8 @@ $this->registerJsFile('/js/common.js', ['depends' => [\yii\web\JqueryAsset::clas
     <div class="container inner-container">
         <div class="row">
             <div class="col-md-4 prize-col">
-                <img src="<?=Yii::$app->request->baseUrl;?>/images/cake.png" class="prize-picture" alt="любимый десерт" id="prizePicCake" name="prizePicCake" width="100%" data-checked="0" data-prizeName="cake">
+                <img src="<?=Yii::$app->request->baseUrl;?>/images/cake.png" class="prize-picture" alt="любимый десерт" id="cake" name="cake" width="100%" data-checked="0" data-prizeName="cake">
+                <img src="<?=Yii::$app->request->baseUrl;?>/images/check/cake.png" class="prize-picture" alt="любимый десерт" id="cakeCheck" name="cakeCheck" width="100%" data-checked="1" data-prizeName="cake" style="display: none">
             </div>
             <div class="col-md-4 prize-col">
                 <img src="<?=Yii::$app->request->baseUrl;?>/images/vine.png" alt="" class="prize-picture" id="prizePicVine" name="prizePicVine" width="100%" data-checked="0" data-prizeName="vine">
