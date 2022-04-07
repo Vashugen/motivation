@@ -14,7 +14,7 @@ class PrizeController extends Controller
     }
 
     public function actionSavePrizes(){
-
+        var_dump(\Yii::$app->user->identity->id); exit;
     }
 
     //TODO реализовать кнопку "Сделать выбор за меня"

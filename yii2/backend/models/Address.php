@@ -13,8 +13,8 @@ class Address
     const TYPE = "common/";
 
     private $addresses = [
-        '1' => [12345, 703869, 977571, 140485, 501707, 609128, 715012, 908794, 362319],
-        '2' => [],
+        '1' => [123451, 703869, 977571, 140485, 501707, 609128, 715012, 908794, 362319],
+        '2' => [287452, 216992, 539466, 650236, 255536, 824446, 793768, 323227, 179377],
         '3' => [],
         '4' => [],
         '5' => []
@@ -22,9 +22,9 @@ class Address
 
     private $levels = [
         '1' => 'login/index',
-        '2' => 'prize/1',
-        '3' => 'prize/2',
-        '4' => 'prize/3',
+        '2' => 'prize/firstPrize',
+        '3' => 'prize/secondPrize',
+        '4' => 'prize/thirdPrize',
         '5' => 'prize/finish'
     ];
 
@@ -34,8 +34,8 @@ class Address
      */
     public function __construct($id)
     {
-        $this->id = str_split($_GET['id']);
-
+        //$this->id = str_split($_GET['id']);
+        $this->id = $id;
     }
 
     public function getPage(){

@@ -18,8 +18,7 @@ class PageController extends Controller
 
     public function actionM()
     {
-        $id = \Yii::$app->request->get('id');
-        $address = new Address($id);
+        $address = new Address(\Yii::$app->request->get('id'));
         $page = $address->getPage();
 
         return $this->render($page);
