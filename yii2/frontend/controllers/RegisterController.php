@@ -23,22 +23,26 @@ class RegisterController extends Controller
     public function actionLoginUser()
     {
         \Yii::$app->response->format = Response::FORMAT_JSON;
-        $user = new UserEngine(\Yii::$app->request->post());
-        if(!$user->validate()){
+        $user_engine = new UserEngine(\Yii::$app->request->post());
+        if(!$user_engine->validate()){
             return ["success" => false, "message" => "Заполните все поля!"];
         }
 
         try {
-            $user->getUser();
+            $user = $user_engine->getUser();
         }catch (Exception $exception){
-            return ["success" => false, "message" => $exception->getMessage()];
+            return ["success" => false, "message" => \MessageEnum::ERROR_QR];
         }
 
         if(empty($user)){
             return ["success" => false, "message" => "Вы ввели неверные логин или пароль или ещё не зарегистрированы!"];
         }
 
-        return ["success" => true];
+        //TODO: тут нам надо определить, на каком она сейчас шаге и в зависимости от этого идти дальше
+        $view = "";
+
+
+        return ["success" => true, "data" => $this->render($view, ['name' => $this->user->name])];
     }
 
     public function actionRegisterUser()
@@ -52,7 +56,7 @@ class RegisterController extends Controller
 
         try{
             $user->create();
-        }catch (Exception $exception){
+        }catch (\yii\base\Exception $exception){
             return ["success" => false, "message" => $exception->getMessage()];
         }
 

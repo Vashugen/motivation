@@ -46,7 +46,7 @@ class UserEngine extends Model
 
         try{
             $this->checkData();
-        }catch (Exception $exception){
+        }catch (\yii\base\Exception $exception){
             throw $exception;
         }
 
@@ -60,13 +60,15 @@ class UserEngine extends Model
 
     private function checkData()
     {
-        //на валидность (буквы блаблабла)
+
+        //TODO валидность присланных значений
+
         if(empty($this->name)){
             throw new Exception("Пожалуйста, заполните имя!");
         }
         $exists_login = UserBoards::findAll(['login' => $this->login]);
         if(!empty($exists_login)){
-            throw new \yii\db\Exception("Логин уже существует, пожалуйста, попробуйте другой!");
+            throw new \yii\base\Exception("Логин уже существует, пожалуйста, попробуйте другой!");
         }
     }
 
@@ -80,7 +82,7 @@ class UserEngine extends Model
         try{
             $model->save();
         }catch (Exception $exception){
-            throw new \yii\db\Exception(MessageEnum::ERROR_QR);
+            throw new Exception(MessageEnum::ERROR_QR);
         }
     }
 
