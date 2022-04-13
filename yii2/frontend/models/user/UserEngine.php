@@ -3,6 +3,7 @@
 namespace frontend\models\user;
 
 use app\models\UserBoards;
+use common\models\User;
 use yii\base\Model;
 use yii\db\Exception;
 
@@ -74,10 +75,10 @@ class UserEngine extends Model
 
     private function createUser(){
 
-        $model = new UserBoards();
-        $model->login = $this->login;
-        $model->name = $this->name;
-        $model->password = md5($this->password);
+        $model = new User();
+        $model->username = $this->login;
+        $model->form_name = $this->name;
+        $model->setPassword($this->password);
 
         try{
             $model->save();

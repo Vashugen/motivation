@@ -18,9 +18,13 @@ class PageController extends Controller
 
     public function actionM()
     {
+        if(\Yii::$app->user->isGuest){
+            return $this->render(Address::LOGIN_PAGE);
+        }
+
         $address = new Address(\Yii::$app->request->get('id'));
         $page = $address->getPage();
-
+print_r($page); exit;
         return $this->render($page);
     }
 

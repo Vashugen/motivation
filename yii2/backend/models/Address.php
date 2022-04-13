@@ -21,12 +21,14 @@ class Address
     ];
 
     private $levels = [
-        '1' => 'login/index',
+        '1' => '/register/acquaintance',
         '2' => 'prize/firstPrize',
         '3' => 'prize/secondPrize',
         '4' => 'prize/thirdPrize',
         '5' => 'prize/finish'
     ];
+
+    const LOGIN_PAGE = "login/index";
 
     /**
      * Address constructor.
